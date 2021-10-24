@@ -1,5 +1,6 @@
 package com.hysteria.hyexplosion;
 
+import com.hysteria.hyexplosion.command.CMDAdmin;
 import com.hysteria.hyexplosion.listener.EntityExplodeListener;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -21,6 +22,7 @@ public final class hyExplosion extends JavaPlugin {
         //Event listener
         Bukkit.getPluginManager().registerEvents(new EntityExplodeListener(), this);
         //Register command
+        getCommand("hyexplosion").setExecutor(new CMDAdmin());
     }
 
     @Override

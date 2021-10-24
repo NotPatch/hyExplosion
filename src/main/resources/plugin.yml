@@ -4,3 +4,10 @@ main: com.hysteria.hyexplosion.hyExplosion
 api-version: 1.17
 authors: [ NotPatch ]
 description: Custom explosion plugin
+
+commands:
+  hyexplosion:
+    aliases:
+      - hye
+    description: Main command for plugin
+    permission: hyexplosion.reload
