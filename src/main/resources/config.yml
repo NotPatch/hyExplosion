@@ -1,0 +1,34 @@
+#     __          ______           __           _
+#    / /_  __  __/ ____/  ______  / /___  _____(_)___  ____
+#   / __ \/ / / / __/ | |/_/ __ \/ / __ \/ ___/ / __ \/ __ \
+#  / / / / /_/ / /____>  </ /_/ / / /_/ (__  ) / /_/ / / / /
+# /_/ /_/\__, /_____/_/|_/ .___/_/\____/____/_/\____/_/ /_/
+#       /____/          /_/
+
+explosions:
+  1:
+    radius: 5 #Size of explosion
+    particle: HEART #Play particle on explosion - https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html
+    sound: BLOCK_ANVIL_FALL #Play sound on explosion - https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html
+    spreadFire: true #Fires around after explosion
+    hurtEntities: true #Do falling blocks damage entities
+    applicable: #Which explosions apply
+      - PRIMEDTNT
+      - CREEPER
+      - ENDCRYSTAL
+      - WITHER
+    fallingBlocks: true #Do blocks fly after explosion
+    violance: 2 #Violance of falling blocks
+  2:
+    radius: 5
+    force: 2
+    particle: HEART
+    sound: BLOCK_ANVIL_FALL
+    spreadFire: true
+    hurtEntities: true
+    applicable:
+      - PRIMEDTNT
+      - CREEPER
+      - CRYSTAL
+    fallingBlocks: true
+    violance: 2

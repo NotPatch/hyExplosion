@@ -1,0 +1,6 @@
+name: hyExplosion
+version: ${project.version}
+main: com.hysteria.hyexplosion.hyExplosion
+api-version: 1.17
+authors: [ NotPatch ]
+description: Custom explosion plugin
