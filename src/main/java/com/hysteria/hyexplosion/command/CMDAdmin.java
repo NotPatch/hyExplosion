@@ -15,11 +15,17 @@ public class CMDAdmin implements TabExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (!(sender instanceof Player)) {
+            hyExplosion.getInstance().reloadConfig();
+            hyExplosion.getInstance().saveDefaultConfig();
+            hyExplosion.getInstance().getConfig().options().copyDefaults(true);
             hyExplosion.getInstance().saveConfig();
             Bukkit.getConsoleSender().sendMessage("[" + hyExplosion.getInstance().getDescription().getName() + "] " + ChatColor.GREEN + "configuration was successfully reloaded!");
         } else {
             Player p = (Player) sender;
             if (p.hasPermission("hyexplosion.reload")) {
+                hyExplosion.getInstance().reloadConfig();
+                hyExplosion.getInstance().saveDefaultConfig();
+                hyExplosion.getInstance().getConfig().options().copyDefaults(true);
                 hyExplosion.getInstance().saveConfig();
                 p.sendMessage("[" + hyExplosion.getInstance().getDescription().getName() + "] " + ChatColor.GREEN + "configuration was successfully reloaded!");
             }

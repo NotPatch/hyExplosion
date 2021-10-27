@@ -8,6 +8,7 @@
 explosions:
   1:
     radius: 5 #Size of explosion
+    force: 1.2 #Power of explosion
     particle: HEART #Play particle on explosion - https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html
     sound: BLOCK_ANVIL_FALL #Play sound on explosion - https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html
     spreadFire: true #Fires around after explosion
@@ -18,10 +19,10 @@ explosions:
       - ENDCRYSTAL
       - WITHER
     fallingBlocks: true #Do blocks fly after explosion
-    violance: 2 #Violance of falling blocks
+    violance: 0.7 #Violance of falling blocks
   2:
     radius: 5
-    force: 2
+    force: 1.7
     particle: HEART
     sound: BLOCK_ANVIL_FALL
     spreadFire: true
@@ -31,4 +32,4 @@ explosions:
       - CREEPER
       - CRYSTAL
     fallingBlocks: true
-    violance: 2
+    violance: 1.3

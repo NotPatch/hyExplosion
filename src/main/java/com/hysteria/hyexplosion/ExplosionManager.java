@@ -23,10 +23,6 @@ public class ExplosionManager {
         return hyExplosion.getInstance().getConfig().getInt(explosion + ".radius");
     }
 
-    public int getForce() {
-        return hyExplosion.getInstance().getConfig().getInt(explosion + ".force");
-    }
-
     public Particle getParticle() {
         return Particle.valueOf(hyExplosion.getInstance().getConfig().getString(explosion + ".particle"));
     }
@@ -46,13 +42,18 @@ public class ExplosionManager {
     public List<String> getApplicable() {
         return hyExplosion.getInstance().getConfig().getStringList(explosion + ".applicable");
     }
+    public double getViolance() {
+        return hyExplosion.getInstance().getConfig().getDouble(explosion + ".violance");
+    }
+
+    public float getForce() {
+        return (float) hyExplosion.getInstance().getConfig().getDouble(explosion + ".force");
+    }
 
     public boolean getFallingblock() {
         return hyExplosion.getInstance().getConfig().getBoolean(explosion + ".fallingBlocks");
     }
 
-    public double getViolance() {
-        return hyExplosion.getInstance().getConfig().getDouble(explosion + ".violance");
-    }
+
 
 }
