@@ -18,7 +18,7 @@ public class EntityExplodeListener implements Listener {
     @EventHandler
     public void onExplode(EntityExplodeEvent e) {
         ExplosionManager manager = new ExplosionManager();
-        Bukkit.broadcastMessage(e.getEntity().getName());
+
         if (!manager.getApplicable().contains(e.getEntity().getName().replace(" ", "").toUpperCase())) {
             return;
         }
