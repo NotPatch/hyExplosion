@@ -18,6 +18,8 @@ explosions:
       - CREEPER
       - ENDCRYSTAL
       - WITHER
+    blacklist-blocks:
+      - BEDROCK
     fallingBlocks: true #Do blocks fly after explosion
     violance: 0.7 #Violance of falling blocks
   2:
@@ -31,5 +33,7 @@ explosions:
       - PRIMEDTNT
       - CREEPER
       - CRYSTAL
+    blacklist-blocks:
+      - BEDROCK
     fallingBlocks: true
     violance: 1.3

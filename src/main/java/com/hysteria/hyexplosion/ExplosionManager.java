@@ -42,6 +42,9 @@ public class ExplosionManager {
     public List<String> getApplicable() {
         return hyExplosion.getInstance().getConfig().getStringList(explosion + ".applicable");
     }
+    public List<String> getBlacklistBlocks(){
+        return hyExplosion.getInstance().getConfig().getStringList(explosion + ".blacklist-blocks");
+    }
     public double getViolance() {
         return hyExplosion.getInstance().getConfig().getDouble(explosion + ".violance");
     }

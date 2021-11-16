@@ -15,9 +15,11 @@ import java.util.ArrayList;
 
 public class EntityExplodeListener implements Listener {
 
+    public static ExplosionManager manager = new ExplosionManager();
+
     @EventHandler
     public void onExplode(EntityExplodeEvent e) {
-        ExplosionManager manager = new ExplosionManager();
+
 
         if (!manager.getApplicable().contains(e.getEntity().getName().replace(" ", "").toUpperCase())) {
             return;
@@ -55,9 +57,12 @@ public class EntityExplodeListener implements Listener {
                 for (int z = (loc.getBlockZ() - radius); z <= (loc.getBlockZ() + radius); z++) {
                     Location l = new Location(loc.getWorld(), x, y, z);
                     if(l.getBlock().getType().isSolid()){
-                        if (l.distance(loc) <= radius) {
-                            blocks.add(l.getBlock());
+                        if(!manager.getBlacklistBlocks().contains(l.getBlock().getType().toString().toUpperCase())){
+                            if (l.distance(loc) <= radius) {
+                                blocks.add(l.getBlock());
+                            }
                         }
+
                     }
                 }
             }
