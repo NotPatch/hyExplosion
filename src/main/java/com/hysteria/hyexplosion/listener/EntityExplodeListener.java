@@ -1,6 +1,8 @@
 package com.hysteria.hyexplosion.listener;
 
 import com.hysteria.hyexplosion.ExplosionManager;
+import com.hysteria.hyexplosion.hook.impl.WorldGuardHook;
+import com.hysteria.hyexplosion.hyExplosion;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -58,8 +60,10 @@ public class EntityExplodeListener implements Listener {
                     Location l = new Location(loc.getWorld(), x, y, z);
                     if(l.getBlock().getType().isSolid()){
                         if(!manager.getBlacklistBlocks().contains(l.getBlock().getType().toString().toUpperCase())){
-                            if (l.distance(loc) <= radius) {
-                                blocks.add(l.getBlock());
+                            if(hyExplosion.getInstance().getHookPlugins().isUseWorldGuard() && WorldGuardHook.canExplode(loc)){
+                                if (l.distance(loc) <= radius) {
+                                    blocks.add(l.getBlock());
+                                }
                             }
                         }
 

@@ -2,6 +2,8 @@ name: hyExplosion
 version: ${project.version}
 main: com.hysteria.hyexplosion.hyExplosion
 api-version: 1.13
+softdepend:
+  - WorldGuard
 authors: [ NotPatch ]
 description: Custom explosion plugin
 
